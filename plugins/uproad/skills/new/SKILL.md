@@ -108,7 +108,7 @@ One case the answer cannot fix: if 4a found the design and it is **already publi
 ### 4c. Push
 
 1. `list_projects` with `workspace` set to the id from 4a — if there is more than one project, pick the one matching the client and say which you picked. One project, or no obvious match: leave `project` off.
-2. `push_design` — the contents of `designs/<slug>/index.html`, with `external_key` set to that same path and `workspace` set to the id from 4a. **The key is what makes re-running safe**: the same key adds a version to the same design instead of creating a duplicate, so a link already sent to the client keeps working. The workspace is required even on a re-push, because the same key could exist in another workspace too.
+2. `push_design` — the contents of `designs/<slug>/index.html`, with `external_key` set to that same path, `workspace` set to the id from 4a, and a one-line Japanese `note`. For a new design write 「初版」 plus a few words on what it is (「初版: 料金ページの3画面」); for a re-push say what changed, as `/uproad:review` does (「料金表を2プランに変更」). Leave version numbers out. **The key is what makes re-running safe**: the same key adds a version to the same design instead of creating a duplicate, so a link already sent to the client keeps working. The workspace is required even on a re-push, because the same key could exist in another workspace too.
 3. `push_doc` — the spec, at `spec.md`. It takes `design_id`, so no workspace here.
 
 A design created this way starts 非公開. Nothing is reachable from outside the workspace until 4d publishes it.
